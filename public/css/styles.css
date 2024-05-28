@@ -1,0 +1,253 @@
+.hero {
+    background-size: cover;
+    height: 90vh;
+  }
+  .side-hero{
+    height: 100%;
+    border-radius: 20px;
+  }
+  .featured-vehicles{
+    height: 80vh;
+  }
+  .card img {
+    height: 400px;
+    object-fit: cover;
+  }
+
+.why-choose-us {
+  padding: 50px 0;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+.why-choose-us h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+.why-choose-us .icon-box {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 100%;
+}
+.why-choose-us .icon-box i {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+.why-choose-us .icon-box h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.why-choose-us .icon-box p {
+    font-size: 16px;
+    color: #666666;
+    
+}
+
+.testimonials {
+  padding: 50px 0;
+  text-align: center;
+}
+.testimonials h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+.testimonial {
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  height: 100%;
+}
+.testimonial img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+.testimonial h4 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+.testimonial p {
+  font-size: 14px;
+  color: #666666;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #000;
+}
+.car-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease;
+}
+.car-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.car-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.car-card-body {
+  padding: 15px;
+}
+
+.car-details-card {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+  transition: box-shadow 0.3s ease;
+  margin: 50px;
+}
+.car-details-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.car-details-card img {
+  width: 50%;
+  object-fit: cover;
+}
+.car-details-body {
+  padding: 20px;
+  width: 50%;
+}
+
+.signup-card {
+  max-width: 800px;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.signup-card-body {
+  padding: 30px 40px;
+}
+
+.signup-welcome-section {
+  background: linear-gradient(45deg, #ff9900, #ff6600);
+  padding: 20px;
+  text-align: center;
+}
+
+.signup-welcome-section h2 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.signup-welcome-section p {
+  margin-bottom: 20px;
+}
+
+.signup-form-control {
+  background-color: #f6f6f6;
+  border: none;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.signup-btn-primary {
+  background: linear-gradient(45deg, #ff9900, #ff6600);
+  border: none;
+  border-radius: 20px;
+  padding: 15px 20px;
+  width: 100%;
+
+}
+
+.signup-btn-outline-light {
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+.login-card {
+  max-width: 800px;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section-login {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  padding: 20px;
+  text-align: center;
+}
+
+.welcome-section-login h2 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.welcome-section-login p {
+  margin-bottom: 20px;
+}
+
+.form-control-login {
+  background-color: #f6f6f6;
+  border: none;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.btn-primary-login {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  border: none;
+  border-radius: 20px;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+.btn-outline-light-login {
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+
+footer{
+  width: 100%;
+}
+.sidebar {
+  background-color: #1d3b6c;
+  height: 100vh;
+  padding-top: 20px;
+  color: white;
+}
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+}
+.sidebar a:hover {
+  background-color: #2b4a8c;
+}
+.content {
+  padding: 20px;
+}
+.table-container {
+  border: 1px dashed #ccc;
+  padding: 20px;
+  margin-top: 20px;
+}
