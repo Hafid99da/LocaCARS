@@ -12,9 +12,9 @@
     <div class="d-flex">
         <div class="sidebar p-3">
             <h2>LocaCARS</h2>
-            <a href="{{ route('dashboard.user.index') }}">Users</a>
-            <a href="#">Cars</a>
-            <a href="#">Rents</a>
+            <a href="{{ route('users.index') }}">Users</a>
+            <a href="{{ route('cars.list.index') }}">Cars</a>
+            <a href="{{ route('rentals.index') }}">Rents</a>
             <a href="{{ route('login.logout') }}">Log out</a>
         </div>
         <div class="content flex-grow-1">

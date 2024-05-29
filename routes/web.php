@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminCarsController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminRentalsController;
+use App\Http\Controllers\AdminUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\AuthController;
@@ -30,23 +33,10 @@ Route::post('/signup', [RegisterController::class, 'store'])->name('signup.store
 
 Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 
-Route::get('/dashboard/users', [UserController::class, 'index'])->name('dashboard.user.index');
-Route::get('/dashboard/users/edit/{user}', [UserController::class, 'edit'])->name('dashboard.user.edit');
-Route::put('/dashboard/users/update/{user}', [UserController::class, 'update'])->name('dashboard.user.update');
-Route::delete('/dashboard/users/delete/{user}', [UserController::class, 'destroy'])->name('dashboard.user.destroy');
-
-Route::get('/dashboard/cars', [CarController::class, 'index'])->name('dashboard.cars.index');
-Route::get('/dashboard/cars/create', [CarController::class, 'create'])->name('dashboard.cars.create');
-Route::get('/dashboard/cars/edit/{car}', [CarController::class, 'edit'])->name('dashboard.cars.edit');
-Route::put('/dashboard/cars/update/{car}', [CarController::class, 'update'])->name('dashboard.cars.update');
-Route::delete('/dashboard/cars/delete/{car}', [CarController::class, 'destroy'])->name('dashboard.cars.destroy');
-
-Route::get('/dashboard/rentals', [RentalController::class, 'index'])->name('dashboard.rentals.index');
-Route::get('/dashboard/rentals/edit/{rental}', [RentalController::class, 'edit'])->name('dashboard.rentals.edit');
-Route::put('/dashboard/rentals/update/{rental}', [RentalController::class, 'update'])->name('dashboard.rentals.update');
-Route::delete('/dashboard/rentals/delete/{rental}', [RentalController::class, 'destroy'])->name('dashboard.rentals.destroy');
-
-
+Route::resource('/dashboard/users', AdminUserController::class);
+Route::resource('/dashboard/rentals', AdminRentalsController::class);
+Route::resource('/dashboard/cars', AdminCarsController::class);
+Route::get('dashboard/cars/list', [AdminCarsController::class, 'carsList'])->name('cars.list');
 
 Route::get('/cars/car/{car}', [CarController::class, 'carDetails'])->name('cars.details');
 Route::resource('/cars', CarController::class);

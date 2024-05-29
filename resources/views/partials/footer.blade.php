@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h5>About LocaCars</h5>
+          <h5>About LocaCARS</h5>
           <p>A wide selection of vehicles and competitive prices to make your experience enjoyable.</p>
         </div>
         <div class="col-md-2">
@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="text-center mt-3">
-        &copy; LocaCars Copyright. All rights reserved.
+        &copy; LocaCARS Copyright. All rights reserved.
       </div>
     </div>
   </footer>

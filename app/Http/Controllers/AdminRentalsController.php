@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Rental;
 use Illuminate\Http\Request;
 
-class RentalController extends Controller
+class AdminRentalsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $rentals = Rental::all();
+        return view('admin.rentals.index', compact('rentals'));
     }
 
     /**
@@ -28,31 +29,13 @@ class RentalController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'rental_date' => 'required|date',
-            'return_date' => 'required|date|after_or_equal:rental_date',
-            'total_price' => 'required|numeric',
-            'car_id' => 'required|numeric',
-            'user_id' => 'required|numeric',
-        ]);
-
-        // Store the rental data
-        $rental = new Rental();
-        $rental->rental_date = $request->rental_date;
-        $rental->return_date = $request->return_date;
-        $rental->total_price = $request->total_price;
-        $rental->car_id = $request->car_id;
-        $rental->user_id = $request->user_id;
-        $rental->save();
-
-
-        return redirect()->route('home')->with('success', 'Car rental confirmed!');
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Rental $rental)
+    public function show(string $id)
     {
         //
     }
@@ -62,7 +45,7 @@ class RentalController extends Controller
      */
     public function edit(Rental $rental)
     {
-        //
+        return view('admin.rentals.edit', compact('rental'));
     }
 
     /**
@@ -70,7 +53,18 @@ class RentalController extends Controller
      */
     public function update(Request $request, Rental $rental)
     {
-        //
+        $request->validate([
+            'rental_date' => 'required|date',
+            'return_date' => 'required|date|after_or_equal:rental_date',
+            'total_price' => 'required|numeric',
+            'car_id' => 'required|numeric',
+            'user_id' => 'required|numeric',
+        ]);
+
+        $rental = Rental::find($rental->id);
+        $rental->update($request->all());
+
+        return redirect()->route('rentals.index')->with('success', 'User updated successfully.');
     }
 
     /**
@@ -78,6 +72,8 @@ class RentalController extends Controller
      */
     public function destroy(Rental $rental)
     {
-        //
+        Rental::destroy($rental->id);
+
+        return redirect()->route('rentals.index')->with('success', 'User deleted successfully.');
     }
 }
