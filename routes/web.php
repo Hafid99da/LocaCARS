@@ -35,8 +35,8 @@ Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 
 Route::resource('/dashboard/users', AdminUserController::class);
 Route::resource('/dashboard/rentals', AdminRentalsController::class);
-Route::resource('/dashboard/cars', AdminCarsController::class);
-Route::get('dashboard/cars/list', [AdminCarsController::class, 'carsList'])->name('cars.list');
+
+Route::get('/cars/list', [CarController::class, 'carsList'])->name('cars.list');
 
 Route::get('/cars/car/{car}', [CarController::class, 'carDetails'])->name('cars.details');
 Route::resource('/cars', CarController::class);

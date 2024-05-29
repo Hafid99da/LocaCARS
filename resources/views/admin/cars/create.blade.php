@@ -12,69 +12,69 @@
         <div class="sidebar p-3">
             <h2>LocaCars</h2>
             <a href="{{ route('users.index') }}">Users</a>
-            <a href="{{ route('cars.list.index') }}">Cars</a>
+            <a href="{{ route('cars.list') }}">Cars</a>
             <a href="{{ route('rentals.index') }}">Rents</a>
             <a href="{{ route('login.logout') }}">Log out</a>
         </div>
         <div class="content flex-grow-1">
             <div class="container">
-                <h1>Hi, Admin</h1>
+                <h1>Add Car</h1>
                 <div class="card">
-                    <div class="card-header">Add new car</div>
-                    <div class="card-body">
+                    <div class="card-header bg-warning text-center text-uppercase fw-bold">Add new car</div>
+                    <div class="card-body bg-light">
 
                         <form action="{{ route('cars.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
-                            <label>Brand</label></br>
+                            <label class="form-label fw-bold">Brand</label></br>
                             <input type="text" name="brand" class="form-control">
                             @error('brand')
                                 <div class="text-danger">{{$message}}</div>
                             @enderror</br>
-                            <label>model</label></br>
+                            <label class="form-label fw-bold">model</label></br>
                             <input type="text" name="model" class="form-control">
                             @error('model')
                                 <div class="text-danger">{{$message}}</div>
                             @enderror</br>
-                            <label>Fuel Type</label></br>
+                            <label class="form-label fw-bold">Fuel Type</label></br>
                             <select name="fuel_type" class="form-control">
                                 <option value="">fuel type</option>
-                                <option value="gasoline">gasoline</option>
+                                <option value="gasoline">Gasoline</option>
                                 <option value="diesel">Diesel</option>
                             </select></br>
                             @error('fuel_type')
                                 <div class="text-danger">{{$message}}</div>
                             @enderror</br>
-                            <label>Gearbox</label></br>
+                            <label class="form-label fw-bold">Gearbox</label></br>
                             <select name="gearbox" class="form-control">
                                 <option value="">Select gearbox</option>
                                 <option value="manual">Manual</option>
-                                <option value="'automatic">'Automatic</option>
+                                <option value="automatic">Automatic</option>
                             </select></br>
                             @error('gearbox')
                                 <div class="text-danger">{{$message}}</div>
                             @enderror</br>
-                            <label>price</label></br>
+                            <label class="form-label fw-bold">price</label></br>
                             <input type="number" name="price" class="form-control">
                             @error('price')
                                 <div class="text-danger">{{$message}}</div>
                             @enderror</br>
-                            <label>Available</label></br>
+                            <label class="form-label fw-bold">Available</label></br>
                             <select name="available" class="form-control">
-                                <option value="">Select gearbox</option>
                                 <option value="1">Yes</option>
-                                <option value="'0">'No</option>
+                                <option value="0">No</option>
                             </select></br>
                             @error('available')
                                 <div class="text-danger">{{$message}}</div>
                             @enderror</br>
-                            <label>image</label></br>
+                            <label class="form-label fw-bold">image</label></br>
                             <input type="file" name="image" class="form-control">
                             @error('image')
                                 <div class="text-danger">{{$message}}</div>
                             @enderror</br>
                             
-
-                            <input type="submit" value="Add car" class="btn btn-success"></br>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary px-5">Submit</button>
+                            </div>
                         </form>
 
                       </div>

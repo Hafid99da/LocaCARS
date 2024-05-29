@@ -13,34 +13,40 @@
         <div class="sidebar p-3">
             <h2>LocaCARS</h2>
             <a href="{{ route('users.index') }}">Users</a>
-            <a href="{{ route('cars.list.index') }}">Cars</a>
+            <a href="{{ route('cars.list') }}">Cars</a>
             <a href="{{ route('rentals.index') }}">Rents</a>
             <a href="{{ route('login.logout') }}">Log out</a>
         </div>
         <div class="content flex-grow-1">
             <div class="container">
                 <h1>Edit Rentals</h1>
-                <form action="{{ route('rentals.update', $rental) }}" method="post">
-                    @csrf
-                    @method('PUT')
-                    <input type="hidden" name="id" id="id" value="{{$rental->id}}"/>
-                    <div class="mb-3">
-                        <label for="rental_date" class="form-label">Rental date</label>
-                        <input type="date" class="form-control" name="rental_date" value="{{ $rental->rental_date }}" required>
+                <div class="card">
+                    <div class="card-header bg-warning text-center text-uppercase fw-bold">Update Rental Information</div>
+                    <div class="card-body bg-light">
+                        <form action="{{ route('rentals.update', $rental) }}" method="post">
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" name="id" id="id" value="{{$rental->id}}"/>
+                            <div class="mb-3">
+                                <label for="rental_date" class="form-label fw-bold">Rental date</label>
+                                <input type="date" class="form-control" name="rental_date" value="{{ $rental->rental_date }}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="return_date" class="form-label fw-bold">Return date</label>
+                                <input type="date" class="form-control" name="return_date" value="{{ $rental->return_date }}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="total_price" class="form-label fw-bold">Total price</label>
+                                <input type="number" class="form-control" name="total_price" value="{{ $rental->total_price }}" required>
+                            </div>
+                            <input type="hidden" name="car_id" value="{{$rental->car_id}}"/>
+                            <input type="hidden" name="user_id" value="{{$rental->user_id}}"/>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary px-5">Update</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label for="return_date" class="form-label">Return date</label>
-                        <input type="date" class="form-control" name="return_date" value="{{ $rental->return_date }}" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="total_price" class="form-label">Total price</label>
-                        <input type="number" class="form-control" name="total_price" value="{{ $rental->total_price }}" required>
-                    </div>
-                    <input type="hidden" name="car_id" value="{{$rental->car_id}}"/>
-                    <input type="hidden" name="user_id" value="{{$rental->user_id}}"/>
-
-                    <button type="submit" class="btn btn-primary">Update</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>

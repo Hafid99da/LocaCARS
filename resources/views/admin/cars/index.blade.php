@@ -12,7 +12,7 @@
         <div class="sidebar p-3">
             <h2>LocaCars</h2>
             <a href="{{ route('users.index') }}">Users</a>
-            <a href="{{ route('cars.list.index') }}">Cars</a>
+            <a href="{{ route('cars.list') }}">Cars</a>
             <a href="{{ route('rentals.index') }}">Rents</a>
             <a href="{{ route('login.logout') }}">Log out</a>
         </div>
@@ -20,9 +20,9 @@
             <div class="container">
                 <h1>Hi, Admin</h1>
                 <div class="table-container">
-                <a href="{{ route('cars.create') }}" class="btn btn-success btn-sm">
+                <a href="{{ route('cars.create') }}" class="btn btn-primary ">
                     <i class="fa fa-plus" aria-hidden="true"></i>Add new car
-                </a>
+                </a><br>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -43,6 +43,7 @@
                                     <td>{{ $car->id }}</td>
                                     <td>{{ $car->image }}</td>
                                     <td>{{ $car->brand }}</td>
+                                    <td>{{ $car->model }}</td>
                                     <td>{{ $car->fuel_type }}</td>
                                     <td>{{ $car->gearbox }}</td>
                                     <td>{{ $car->price }}</td>

@@ -13,35 +13,42 @@
         <div class="sidebar p-3">
             <h2>LocaCARS</h2>
             <a href="{{ route('users.index') }}">Users</a>
-            <a href="{{ route('cars.list.index') }}">Cars</a>
-            <a href="{{ route('dashboard.rentals.index') }}">Rents</a>
+            <a href="{{ route('cars.list') }}">Cars</a>
+            <a href="{{ route('rentals.index') }}">Rents</a>
             <a href="{{ route('login.logout') }}">Log out</a>
         </div>
         <div class="content flex-grow-1">
             <div class="container">
                 <h1>Edit User</h1>
-                <form action="{{ route('users.update', $user) }}" method="post">
-                    @csrf
-                    @method('PUT')
-                    <input type="hidden" name="id" id="id" value="{{$user->id}}"/>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Fullname</label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" required>
+                <div class="card">
+                    <div class="card-header bg-warning text-center text-uppercase fw-bold">Update User Information</div>
+                    <div class="card-body bg-light">
+                        <form action="{{ route('users.update', $user) }}" method="post">
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" name="id" id="id" value="{{$user->id}}"/>
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold">Fullname</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telephone" class="form-label fw-bold">Telephone</label>
+                                <input type="text" class="form-control" id="telephone" name="telephone" value="{{ $user->telephone }}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="adresse" class="form-label fw-bold">Adresse</label>
+                                <input type="text" class="form-control" id="adresse" name="adresse" value="{{ $user->adresse }}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-bold">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}" required>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary px-5">Update</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label for="telephone" class="form-label">Telephone</label>
-                        <input type="text" class="form-control" id="telephone" name="telephone" value="{{ $user->telephone }}" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="adresse" class="form-label">Adresse</label>
-                        <input type="text" class="form-control" id="adresse" name="adresse" value="{{ $user->adresse }}" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Update</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>

@@ -36,7 +36,7 @@ class AdminUserController extends Controller
 //////////////////////////////////////
 
 
-    public function edit(string $id)
+    public function edit(User $user)
     {
         return view('admin.users.edit', compact('user'));
     }

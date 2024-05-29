@@ -20,7 +20,7 @@
       <div class="row">
         <div class="col-md-4 mb-1">
           <div class="card">
-            <img src="{{ asset('images/car1.jpg') }}" class="card-img-top" alt="Dacia Dokker">
+            <img src="{{ asset('images/car5.jpg') }}" class="card-img-top" alt="Dacia Dokker">
             <div class="card-body">
               <h4 class="card-title">Dacia Dokker</h4>
               <p class="card-text">2016</p>

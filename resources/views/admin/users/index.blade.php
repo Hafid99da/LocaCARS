@@ -12,7 +12,7 @@
         <div class="sidebar p-3">
             <h2>LocaCars</h2>
             <a href="{{ route('users.index') }}">Users</a>
-            <a href="{{ route('cars.list.index') }}">Cars</a>
+            <a href="{{ route('cars.list') }}">Cars</a>
             <a href="{{ route('rentals.index') }}">Rents</a>
             <a href="{{ route('login.logout') }}">Log out</a>
         </div>

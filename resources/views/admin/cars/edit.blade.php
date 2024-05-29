@@ -13,35 +13,59 @@
         <div class="sidebar p-3">
             <h2>LocaCARS</h2>
             <a href="{{ route('users.index') }}">Users</a>
-            <a href="{{ route('cars.list.index') }}">Cars</a>
+            <a href="{{ route('cars.list') }}">Cars</a>
             <a href="{{ route('rentals.index') }}">Rents</a>
             <a href="{{ route('login.logout') }}">Log out</a>
         </div>
         <div class="content flex-grow-1">
             <div class="container">
-                <h1>Edit User</h1>
-                <form action="{{ route('dashboard.user.update', $user) }}" method="post">
-                    @csrf
-                    @method('PUT')
-                    <input type="hidden" name="id" id="id" value="{{$user->id}}"/>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Fullname</label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" required>
+                <h1>Edit Car</h1>
+                <div class="card">
+                    <div class="card-header bg-warning text-center text-uppercase fw-bold">Update car</div>
+                    <div class="card-body bg-light">
+                        <form action="{{ route('cars.update', $car) }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" name="id" id="id" value="{{$car->id}}"/>
+                            
+                            <label class="form-label fw-bold">Brand</label></br>
+                            <input type="text" name="brand" class="form-control" value="{{ $car->brand }}" ><br>
+                   
+                            <label class="form-label fw-bold">Model</label></br>
+                            <input type="text" name="model" class="form-control" value="{{ $car->model }}" ><br>
+                        
+                            <label class="form-label fw-bold">Fuel Type</label></br>
+                            <select name="fuel_type" class="form-control" value="{{ $car->fuel_type }}" >
+                                <option value="">fuel type</option>
+                                <option value="gasoline">Gasoline</option>
+                                <option value="diesel">Diesel</option>
+                            </select></br>
+                        
+                            <label class="form-label fw-bold">Gearbox</label></br>
+                            <select name="gearbox" class="form-control" value="{{ $car->gearbox }}" >
+                                <option value="">Select gearbox</option>
+                                <option value="manual">Manual</option>
+                                <option value="automatic">Automatic</option>
+                            </select></br>
+                        
+                            <label class="fw-bold">Price</label></br>
+                            <input type="text" name="price" class="form-control" value="{{ $car->price }}" ><br>
+                        
+                            <label class="form-label fw-bold">Available</label></br>
+                            <select name="available" class="form-control" value="{{ $car->available }}" >
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select></br>
+                        
+                            <label class="form-label fw-bold">image</label></br>
+                            <input type="file" name="image" class="form-control" value="{{ $car->image }}"><br>
+                        
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary px-5">Update</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label for="telephone" class="form-label">Telephone</label>
-                        <input type="text" class="form-control" id="telephone" name="telephone" value="{{ $user->telephone }}" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="adresse" class="form-label">Adresse</label>
-                        <input type="text" class="form-control" id="adresse" name="adresse" value="{{ $user->adresse }}" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Update</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
