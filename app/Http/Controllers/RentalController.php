@@ -46,7 +46,7 @@ class RentalController extends Controller
         $rental->save();
 
 
-        return redirect()->route('home')->with('success', 'Car rental confirmed!');
+        return redirect()->route('cars.list')->with('success', 'Car rental confirmed!');
     }
 
     /**

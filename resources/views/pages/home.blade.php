@@ -5,10 +5,10 @@
       <div class="text-center text-md-start px-5">
         <h1 class="display-4">Rent <span class="text-warning">a car</span> and find great deals with us</h1>
         <p class="lead">Choose from a collection of brand new cars, low prices are part of our every day offer.</p>
-        <button class="btn btn-warning btn-lg text-white">Book online now!</button>
+        <a class="btn btn-warning btn-lg text-white" href="{{ route('cars.list') }}">Book online now!</a>
       </div>
       <div class="side-hero col-12 col-md-6 d-flex justify-content-center align-items-center" style="background-color: #007bff;">
-        <img src="{{ asset('images/bv-re.png') }}" alt="Car" class="img-fluid" />
+        <img src="{{ asset('images/home/hyu1.png') }}" alt="Car" />
       </div>
     </section>
 
@@ -20,31 +20,37 @@
       <div class="row">
         <div class="col-md-4 mb-1">
           <div class="card">
-            <img src="{{ asset('images/car5.jpg') }}" class="card-img-top" alt="Dacia Dokker">
+            <img src="{{ asset('images/home/car1.jpg') }}" class="card-img-top" alt="Dacia Dokker">
             <div class="card-body">
               <h4 class="card-title">Dacia Dokker</h4>
-              <p class="card-text">2016</p>
-              <a class="btn btn-primary" href=" {{ route('cars.index') }} ">Rent now</a>
+              <p class="card-text">2019</p>
+              <div>
+                <a class="btn btn-primary" href="{{ route('cars.list') }}" style="width: 100%;">Rent now</a>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-md-4 mb-1">
           <div class="card ">
-            <img src="{{ asset('images/car2.jpg') }}" class="card-img-top" alt="Dacia Duster">
+            <img src="{{ asset('images/home/car2.jpg') }}" class="card-img-top" alt="Dacia Duster">
             <div class="card-body">
               <h4 class="card-title">Dacia Duster</h4>
               <p class="card-text">2021</p>
-              <a class="btn btn-primary" href=" {{ route('cars.index') }} ">Rent now</a>
+              <div>
+                <a class="btn btn-primary" href="{{ route('cars.list') }}" style="width: 100%;">Rent now</a>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-md-4 mb-1">
           <div class="card">
-            <img src="{{ asset('images/car3.jpg') }}" class="card-img-top" alt="Renault Clio">
+            <img src="{{ asset('images/home/car3.jpg') }}" class="card-img-top" alt="Renault Clio">
             <div class="card-body">
               <h4 class="card-title">Renault Clio</h4>
-              <p class="card-text">2019</p>
-              <a class="btn btn-primary" href=" {{ route('cars.index') }} ">Rent now</a>
+              <p class="card-text">2023</p>
+              <div>
+                <a class="btn btn-primary" href=" {{ route('cars.list') }}" style="width: 100%;">Rent now</a>
+              </div>
             </div>
           </div>
         </div>
@@ -94,7 +100,7 @@
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="testimonial">
-                    <img src="https://via.placeholder.com/80" alt="Client Photo">
+                    <img src="{{ asset('images/home/per1.png') }}" alt="Client Photo">
                     <h4>Efficient Collaborating</h4>
                     <p>Outstanding car rental experience. Impressive teamwork and coordination. Effortless process, highly recommended.</p>
                     <p><strong>Ann Black</strong><br>CEO at ABC Corporation</p>
@@ -102,7 +108,7 @@
             </div>
             <div class="col-md-4">
                 <div class="testimonial">
-                    <img src="https://via.placeholder.com/80" alt="Client Photo">
+                    <img src="{{ asset('images/home/per2.jpg') }}" alt="Client Photo">
                     <h4>Intuitive Design</h4>
                     <p>Exceptional user experience. Intuitively designed for effortless navigation. Highly recommended for a seamless and user-friendly interface.</p>
                     <p><strong>John Doe</strong><br>Marketing Manager</p>
@@ -110,7 +116,7 @@
             </div>
             <div class="col-md-4">
                 <div class="testimonial">
-                    <img src="https://via.placeholder.com/80" alt="Client Photo">
+                    <img src="{{ asset('images/home/per3.png') }}" alt="Client Photo">
                     <h4>Mindblowing Service</h4>
                     <p>Mindblowing service that exceeds expectations. Unparalleled attention to detail. A service experience like no other.</p>
                     <p><strong>Jane Cooper</strong><br>Small Business Owner</p>

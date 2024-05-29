@@ -31,14 +31,15 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('login.logout')->
 Route::get('/signup', [RegisterController::class, 'index'])->name('signup')->middleware('guest');
 Route::post('/signup', [RegisterController::class, 'store'])->name('signup.store');
 
-Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+Route::middleware(["auth", "role:admin"])->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+    Route::resource('/dashboard/users', AdminUserController::class);
+    Route::resource('/dashboard/rentals', AdminRentalsController::class);
+    Route::resource('/cars', CarController::class);
+});
 
-Route::resource('/dashboard/users', AdminUserController::class);
-Route::resource('/dashboard/rentals', AdminRentalsController::class);
+Route::get('/cars/car/list', [CarController::class, 'carsList'])->name('cars.list');
+Route::resource('/rentalCars', RentalController::class)->middleware('auth');
+Route::get('/cars/car/{car}', [CarController::class, 'carDetails'])->name('cars.details')->middleware(["auth", "role:user"]);
 
-Route::get('/cars/list', [CarController::class, 'carsList'])->name('cars.list');
-
-Route::get('/cars/car/{car}', [CarController::class, 'carDetails'])->name('cars.details');
-Route::resource('/cars', CarController::class);
-Route::resource('/rentalCars', RentalController::class);
 

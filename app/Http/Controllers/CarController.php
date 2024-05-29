@@ -9,24 +9,14 @@ use Illuminate\Support\Facades\File;
 
 class CarController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $cars = Car::all();
-        return view('pages.bookcars', compact('cars'));
-    }
-
 ///////////////////////////////
 
     public function carsList()
     {
         $cars = Car::all();
-        return view('admin.cars.index', compact('cars'));
+        return view('pages.bookcars', compact('cars'));
     }
 
-///////////////////////////////
 
     public function carDetails(Car $car){
         if(Auth::user()){
@@ -36,6 +26,14 @@ class CarController extends Controller
             return redirect()->route('login.index');
         };
         
+    }
+
+///////////////////////////////
+
+    public function index()
+    {
+        $cars = Car::all();
+        return view('admin.cars.index', compact('cars'));
     }
 
     /**
@@ -65,7 +63,7 @@ class CarController extends Controller
             $file = $request->file('image');
             $extension = $file -> getClientOriginalExtension();
             $filename= time() . "." .$extension;
-            $path = "images/";
+            $path = "images/cars/";
             $file->move($path, $filename);
         }
 
@@ -78,7 +76,7 @@ class CarController extends Controller
             'available' => $request->available,
             'image' => $path.$filename
         ]);
-        return redirect()->route('cars.index')->withInput(); 
+        return redirect()->route('cars.index')->with('success', 'Car created successfully.');  
     }
 
     /**
@@ -120,7 +118,7 @@ class CarController extends Controller
             $extension = $file->getClientOriginalExtension();
             $filename= time() . "." .$extension;
 
-            $path = "images/";
+            $path = "images/cars/";
             $file->move($path, $filename);
 
             if(File::exists($car->image)){
@@ -144,7 +142,7 @@ class CarController extends Controller
             'price' => $request->price,
             'available' => $request->available
         ]);
-        return redirect()->route('cars.list')->with('success', 'Car updated successfully.'); 
+        return redirect()->route('cars.index')->with('success', 'Car updated successfully.'); 
     }
 
     /**
@@ -156,6 +154,6 @@ class CarController extends Controller
         if(File::exists($car->image)){
             File::delete($car->image);
         }
-        return redirect()->route('cars.list')->with('success', 'User deleted successfully.');
+        return redirect()->route('cars.index')->with('success', 'User deleted successfully.');
     }
 }

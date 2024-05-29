@@ -25,8 +25,8 @@
         </div>
         <div class="col-md-4">
           <h5>Install App</h5>
-          <a href="#"><img src="{{ asset('images/app-logo.png') }}" alt="App Store" style="width: 150px; height: 50px;"></a>
-          <a href="#"><img src="{{ asset('images/google-logo.png') }}" alt="Google Play" style="width: 150px; height: 50px;"></a>
+          <a href="#"><img src="{{ asset('images/home/app-logo.png') }}" alt="App Store" style="width: 150px; height: 50px;"></a>
+          <a href="#"><img src="{{ asset('images/home/google-logo.png') }}" alt="Google Play" style="width: 150px; height: 50px;"></a>
         </div>
       </div>
       <div class="text-center mt-3">

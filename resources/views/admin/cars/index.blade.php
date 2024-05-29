@@ -10,15 +10,17 @@
 <body>
     <div class="d-flex">
         <div class="sidebar p-3">
-            <h2>LocaCars</h2>
+            <a href="{{ route('dashboard') }}"><h2>LocaCars</h2></a>
+            <a href="{{ route('home') }}">Back to Website</a>
             <a href="{{ route('users.index') }}">Users</a>
-            <a href="{{ route('cars.list') }}">Cars</a>
+            <a href="{{ route('cars.index') }}">Cars</a>
             <a href="{{ route('rentals.index') }}">Rents</a>
             <a href="{{ route('login.logout') }}">Log out</a>
         </div>
         <div class="content flex-grow-1">
             <div class="container">
                 <h1>Hi, Admin</h1>
+                <h5 class="text-muted">Dashboard(Cars)</h5>
                 <div class="table-container">
                 <a href="{{ route('cars.create') }}" class="btn btn-primary ">
                     <i class="fa fa-plus" aria-hidden="true"></i>Add new car
