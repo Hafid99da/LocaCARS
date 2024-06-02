@@ -18,7 +18,7 @@
                         <p class="p-3">Gearbox: <strong>{{ $car->gearbox }}</strong></p>
                         <p class="p-3">Type: <strong>{{ $car->fuel_type }}</strong></p>
                         <p class="p-3">Available: <strong>{{ $car->available() }}</strong></p>
-                        <p class="p-3">Available: <strong>{{ $car->price }}</strong></p>
+                        <p class="p-3">price: <strong>{{ $car->price }}</strong></p>
                     </div>
                     <div class="mb-3 text-center">
                         <p>Total: <strong id="total-price">0.00 DH</strong></p>

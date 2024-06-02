@@ -56,7 +56,7 @@
             </div>
           </div>
           <div class="col-md-6 d-flex flex-column justify-content-center align-items-center text-white signup-welcome-section">
-            <h2>Welcome to Locavo</h2>
+            <h2>Welcome to LocaCARS</h2>
             <p>Already a user?</p>
             <a href="{{ route('login.index') }}" class="btn btn-outline-light signup-btn-outline-light">Log In</a>
           </div>

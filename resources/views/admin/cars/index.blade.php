@@ -43,7 +43,9 @@
                             @foreach($cars as $car)
                                 <tr>
                                     <td>{{ $car->id }}</td>
-                                    <td>{{ $car->image }}</td>
+                                    <td>
+                                        <img src="{{ asset($car->image) }}" alt="car image" width="100px" height="100px">
+                                    </td>
                                     <td>{{ $car->brand }}</td>
                                     <td>{{ $car->model }}</td>
                                     <td>{{ $car->fuel_type }}</td>

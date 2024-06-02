@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="col-md-6 d-flex flex-column justify-content-center align-items-center text-white welcome-section-login">
-            <h2>Welcome to Locavo</h2>
+            <h2>Welcome to LocaCARS</h2>
             <p>Don't have an account?</p>
             <a href="{{ route('signup') }}" class="btn btn-outline-light btn-outline-light-login" >Sign Up</a>
           </div>
