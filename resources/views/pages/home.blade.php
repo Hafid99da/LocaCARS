@@ -5,7 +5,7 @@
       <div class="text-center text-md-start px-5">
         <h1 class="display-4">Rent <span class="text-warning">a car</span> and find great deals with us</h1>
         <p class="lead">Choose from a collection of brand new cars, low prices are part of our every day offer.</p>
-        <a class="btn btn-warning btn-lg text-white" href="{{ route('cars.list') }}">Book online now!</a>
+        <a class="btn btn-warning btn-lg text-white" href="{{ route('cars.list') }}" style="color: linear-gradient(45deg, #ff9900, #ff6600);;">Book online now!</a>
       </div>
       <div class="side-hero col-12 col-md-6 d-flex justify-content-center align-items-center" style="background-color: #007bff;">
         <img src="{{ asset('images/home/hyu1.png') }}" alt="Car" />
